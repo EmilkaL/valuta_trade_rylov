@@ -1,0 +1,11 @@
+.venv/
+dist/
+__pycache__/
+*.egg-info/
+.ruff_cache/
+logs/
+.env
+.env.*
+*.cast
+*.tmp
+data/.lock

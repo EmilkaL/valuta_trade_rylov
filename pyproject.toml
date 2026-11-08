@@ -1,0 +1,38 @@
+[project]
+name = "valutatrade-hub"
+version = "0.1.0"
+description = "A terminal app for simulated currency trading"
+authors = [{ name = "EmilkaL" }]
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "prettytable>=3.18",
+    "requests>=2.32",
+]
+
+[project.scripts]
+project = "valutatrade_hub.cli.interface:main"
+
+[build-system]
+requires = ["uv_build>=0.13.6,<0.14.0"]
+build-backend = "uv_build"
+
+[tool.uv.build-backend]
+module-root = ""
+
+[dependency-groups]
+dev = ["ruff>=0.17"]
+
+[tool.ruff]
+line-length = 88
+target-version = "py312"
+exclude = [".venv", "dist", "__pycache__"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]
+
+[tool.valutatrade]
+data_dir = "data"
+logs_dir = "logs"
+rates_ttl_seconds = 300
+base_currency = "USD"
